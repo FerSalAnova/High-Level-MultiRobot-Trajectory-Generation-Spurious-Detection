@@ -97,7 +97,7 @@ Here are some example images of generated robot Petri nets:
 
 ### Specification Petri Nets
 
-Below is an example of a specification Petri net generated from an LTL formula:
+Below is an example of a specification net generated from an LTL formula (The formula should be defined following the standars shown in https://lsv.ens-paris-saclay.fr/~gastin/ltl2ba/):
 
 ![Specification Net Example](src/NwN/Environments/ShoppingMall/SN.png)
 *Example: Petri net generated from LTL specification*
