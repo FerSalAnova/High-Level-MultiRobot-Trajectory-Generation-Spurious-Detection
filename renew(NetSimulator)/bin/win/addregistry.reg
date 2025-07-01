@@ -1,0 +1,56 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\.rnw]
+@="x-renew-net"
+[HKEY_CLASSES_ROOT\x-renew-net]
+@="Renew Petri net drawing"
+[HKEY_CLASSES_ROOT\x-renew-net\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\x-renew-net\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-net.ico"
+[HKEY_CLASSES_ROOT\.aip]
+@="x-renew-interactiondiagram"
+[HKEY_CLASSES_ROOT\x-renew-interactiondiagram]
+@="Renew interaction diagram"
+[HKEY_CLASSES_ROOT\x-renew-interactiondiagram\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\x-renew-interactiondiagram\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-interactiondiagram.ico"
+[HKEY_CLASSES_ROOT\.draw]
+@="x-renew-drawing"
+[HKEY_CLASSES_ROOT\x-renew-drawing]
+@="Renew simple drawing"
+[HKEY_CLASSES_ROOT\x-renew-drawing\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\x-renew-drawing\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-drawing.ico"
+[HKEY_CLASSES_ROOT\.sns]
+@="x-renew-sns"
+[HKEY_CLASSES_ROOT\x-renew-sns]
+@="Renew shadow net system"
+[HKEY_CLASSES_ROOT\x-renew-sns\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\x-renew-sns\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-sns.ico"
+[HKEY_CLASSES_ROOT\.rst]
+@="x-renew-state"
+[HKEY_CLASSES_ROOT\x-renew-state]
+@="Renew simulation state"
+[HKEY_CLASSES_ROOT\x-renew-state\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-state.ico"
+[HKEY_CLASSES_ROOT\.pnml]
+@="pnml+xml"
+[HKEY_CLASSES_ROOT\pnml+xml]
+@="Renew PNML net drawing"
+[HKEY_CLASSES_ROOT\pnml+xml\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\pnml+xml\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-pnml+xml.ico"
+[HKEY_CLASSES_ROOT\.net]
+@="x-renew-lola"
+[HKEY_CLASSES_ROOT\x-renew-lola]
+@="Renew Lola net drawing"
+[HKEY_CLASSES_ROOT\x-renew-lola\shell\open\command]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\loadrenew.bat \"%1\""
+[HKEY_CLASSES_ROOT\x-renew-lola\DefaultIcon]
+@="C:\\Users\\salan\\OneDrive\\Escritorio\\Master\\Internships\\renew4.1\\bin\\win\\icons\\application-x-renew-lola.ico"

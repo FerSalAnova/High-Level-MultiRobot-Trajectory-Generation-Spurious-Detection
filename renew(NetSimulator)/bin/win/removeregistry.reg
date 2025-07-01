@@ -1,0 +1,16 @@
+REGEDIT4
+
+[-HKEY_CLASSES_ROOT\.rnw]
+[-HKEY_CLASSES_ROOT\x-renew-net]
+[-HKEY_CLASSES_ROOT\.aip]
+[-HKEY_CLASSES_ROOT\x-renew-interactiondiagram]
+[-HKEY_CLASSES_ROOT\.draw]
+[-HKEY_CLASSES_ROOT\x-renew-drawing]
+[-HKEY_CLASSES_ROOT\.sns]
+[-HKEY_CLASSES_ROOT\x-renew-sns]
+[-HKEY_CLASSES_ROOT\.rst]
+[-HKEY_CLASSES_ROOT\x-renew-state]
+[-HKEY_CLASSES_ROOT\.pnml]
+[-HKEY_CLASSES_ROOT\pnml+xml]
+[-HKEY_CLASSES_ROOT\.net]
+[-HKEY_CLASSES_ROOT\x-renew-lola]

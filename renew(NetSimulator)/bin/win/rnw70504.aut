@@ -1,0 +1,49 @@
+11 
+    de.renew.gui.CPNDrawing 47 
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15417 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1301 657 74 76 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15418 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 647 340 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 4 "TextAlignment" "Int" 1 "FigureWithID" "Int" 15420 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 646 409 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15422 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 908 399 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15425 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 642 500 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15427 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 731 582 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15430 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1309 113 63 62 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15439 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 180 140 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15441 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 183 674 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15443 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 509 644 48 47 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15446 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 182 840 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15448 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 184 931 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15450 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 553 575 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15452 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 1329 851 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15455 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 789 797 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15456 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 647 285 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15459 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 856 800 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15461 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 851 672 37 35 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15467 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 1046 932 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15469 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 1138 927 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15474 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 1223 938 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15481 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 400 839 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15483 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 399 933 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15484 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 515 931 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15493 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 0 255 676 866 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15497 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 2002 186 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15502 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 679 689 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15505 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 0 255 678 742 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15510 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 731 648 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15522 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 805 524 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15527 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 255 0 255 255 283 529 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15533 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 0 255 209 491 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15538 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1993 350 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15541 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1024 358 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15549 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1980 564 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15552 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1110 404 24 16 NULL  
+        de.renew.gui.DeclarationFigure "attributes" "attributes" 4 "TextAlignment" "Int" 0 "FigureWithID" "Int" 15560 "FrameColor" "Color" 255 199 158 255 "FillColor" "Color" 255 199 158 255 1525 734 "import java.io.File;\nimport java.io.FileOutputStream;\nimport java.io.IOException;\n\nEval ev;\nde.renew.net.NetInstance m,x1,x2,x3,x4,x5;\nde.renew.net.NetInstance x6,x7,x8,x9,x10;\nString r1,seq,v,e0,e1,e2,e3,e4,e5,e6,e7,e8,e9,e10;\nString o1,o2,o3,o4,o5,o6,o7,o8,o9,o10;\nString cond1,cond2,cond3,cond4,cond5,cond6;\nString cond7,cond8,cond9,cond10,cond11,cond12;\nString cond13,cond14,cond15,cond16,cond17,cond18;\nString cond19,cond20;\nString to1,to2,to3,to4,to5,to6;\nString to7,to8,to9,to10,to11,to12;\nString to13,to14,to15,to16,to17,to18;\nString to19,to20;\nString from1,from2,from3,from4,from5,from6;\nString from7,from8,from9,from10,from11,from12;\nString from13,from14,from15,from16,from17,from18;\nString from19,from20;\nString cap,cap2;\nString t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;\nint a,b,c,d,e,f,n;\nFileOutputStream w;\nString n1,n2,n3,n4,n5,n6,n7,n8,n9,n10;\nString bs;\nlong st;\nString caps,initialState,h;\n" "SansSerif" 0 12 0 NULL NULL 1  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15563 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 324 193 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15564 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 268 234 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15565 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 255 0 255 292 281 20 20 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15576 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 2009 843 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15584 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 2933 1226 24 16 NULL  
+        de.renew.gui.TransitionFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15597 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 0 0 255 255 1248 295 24 16 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15647 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 112 219 147 255 855 440 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15649 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 112 219 147 255 1045 430 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15651 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 112 219 147 255 1167 377 20 20 NULL  
+        de.renew.gui.PlaceFigure "attributes" "attributes" 3 "FigureWithID" "Int" 15653 "FrameColor" "Color" 0 0 0 255 "FillColor" "Color" 112 219 147 255 1209 325 20 20 NULL  NULL  0 0 3167 1452 
