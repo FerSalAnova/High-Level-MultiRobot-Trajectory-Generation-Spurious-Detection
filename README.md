@@ -45,7 +45,6 @@ The repository is organized into 4 main directories, each serving a specific pur
 - **Java**: Required for the Petri net simulator.
 - **Python 3.7+**: Required for the machine learning pipeline and simulation components.
 - **VMAS (Virtual Multi-Agent Simulator)**: Used for low-level simulation tasks.
-- **Dependencies**: For the Python machine learning pipeline, install the required dependencies:
 
 ---
 
