@@ -98,7 +98,7 @@ This guide explains how to generate two types of Petri nets used in robot planni
        java SpecNetGenerator buchi_export.txt
    ```
 
-6.This produces spec_net.pnml, which can be opened directly in ReNeW alongside the robot net.
+6. This produces spec_net.pnml, which can be opened directly in ReNeW alongside the robot net.
 
 ### Launching the Renew Petri Net Simulator
 
