@@ -48,6 +48,58 @@ The repository is organized into 4 main directories, each serving a specific pur
 
 ---
 
+### Generating Robot and Specification Nets
+
+This guide explains how to generate two types of Petri nets used in robot planning and verification:
+
+- **Robot Nets** – define the robot’s behavior on a grid.
+- **Specification Nets** – define the task or constraint using LTL.
+
+---
+
+## Robot Net Generation
+
+1. Navigate to the `CreateRobotNet/` directory.
+
+2. Open `GridToPetrinet.java`.
+
+3. Inside the file, define your grid structure using the data structures provided (e.g., define cells, grid size, start/goal locations, etc.).
+
+4. Compile and run the script:
+
+   ```bash
+   javac GridToPetrinet.java
+   java GridToPetrinet
+   ```
+   
+5. This will generate a file named robot_net.pnml that defines the robot’s Petri net.
+
+6. Open robot_net.pnml in ReNeW to visualize or simulate it.
+
+## Specification Net Generation
+
+1. Navigate to the `CreateSpecNet/` directory.
+
+2. Open `LTLBuchiAutomaton.java`.
+
+3. Compile and run the script:
+
+   ```bash
+   javac LTLBuchiAutomaton.java
+   java LTLBuchiAutomaton
+   ```
+   
+4. When prompted in the terminal, type the desired LTL formula.  The program outputs buchi_export.txt containing the automaton description.
+
+5. Translate the automaton into a Petri net:
+
+   ```bash
+       javac SpecNetGenerator.java
+       java SpecNetGenerator buchi_export.txt
+   ```
+
+6.This produces spec_net.pnml, which can be opened directly in ReNeW alongside the robot net.
+
 ### Launching the Renew Petri Net Simulator
 
 1. Navigate to the `renew_petri_net_simulator/` folder.
