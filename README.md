@@ -139,6 +139,9 @@ Below are some example GIFs showing the resulting multi-robot trajectories gener
 ![Robot Trajectory 1](vmas(Low-LevelSimulator)/code/saves/datasets/mall_VMAS/4_400/qualitative/0.gif)
 *Example 1: Multi-robot coordinated planning*
 
+![Robot Trajectory 2](vmas(Low-LevelSimulator)/code/saves/datasets/mall_VMAS/4_400/qualitative/Example.gif)
+*Paper Example: $\lozenge ( y_1 \land \lozenge ( y_2 \land \lozenge y_3 ) )$*
+
 ### Robot Petri Nets
 
 Here are some example images of generated robot Petri nets:
