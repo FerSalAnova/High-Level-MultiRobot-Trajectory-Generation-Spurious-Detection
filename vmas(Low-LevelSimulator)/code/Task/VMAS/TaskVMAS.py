@@ -6,6 +6,11 @@ import numpy as np
 from Task.Task import Task
 from vmas import make_env
 import traceback
+import matplotlib.pyplot as plt # For drawing on the frame
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas # To render matplotlib to an image
+import io # To capture the image buffer
+import imageio
+import cv2
 
 class TaskVMAS(Task):
 
@@ -138,63 +143,152 @@ class TaskVMAS(Task):
             obs.append(agent_obs.unsqueeze(0))
         return tuple(obs)
 
+    def gif(self, trajectory):
+            frames = []
+            for i in range(trajectory.shape[0]):
+                obs = trajectory[i,:].unsqueeze(0)
+                #print(obs)
+                env = self.setupEnvs(obs)
+                frame = env.render(mode="rgb_array")
+                frames.append(frame)
+            return frames
+
     # def gif(self, trajectory):
-    #         frames = []
-    #         for i in range(trajectory.shape[0]):
-    #             obs = trajectory[i,:].unsqueeze(0)
-    #             #print(obs)
-    #             env = self.setupEnvs(obs)
-    #             frame = env.render(mode="rgb_array")
+    #     frames = []
+        
+    #     # Determine the number of frames to render. Use the full trajectory length now.
+    #     max_frames_to_render = trajectory.shape[0] 
+
+    #     # Create the environment instance only once for the entire trajectory
+    #     env_for_gif_rendering = None
+    #     try:
+    #         # Call setupEnvs ONLY ONCE here to get the environment
+    #         initial_obs_for_env_setup = trajectory[0,:].unsqueeze(0)
+    #         env_for_gif_rendering = self.setupEnvs(initial_obs_for_env_setup) 
+            
+    #         if not (hasattr(env_for_gif_rendering, 'render') and callable(getattr(env_for_gif_rendering, 'render'))):
+    #             # This error indicates a fundamental problem, keep it.
+    #             print(f"ERROR: Environment does not have a render method. Cannot generate GIFs.")
+    #             return [] 
+
+    #         for i in range(max_frames_to_render): 
+    #             obs_for_current_frame = trajectory[i,:].unsqueeze(0)
+                
+    #             # Set the environment's state to match the current frame's observation
+    #             # obs_for_current_frame[0] gets rid of the batch dimension (1, features) -> (features)
+    #             self.setWorldStates(env_for_gif_rendering, 0, obs_for_current_frame[0]) 
+
+    #             frame = env_for_gif_rendering.render(mode="rgb_array")
+                
+    #             # Keep these conversions for robustness, even if not strictly needed now
+    #             if frame.dtype != np.uint8:
+    #                 frame = frame.astype(np.uint8)
+    #             if frame.min() < 0 or frame.max() > 255:
+    #                 frame = np.clip(frame, 0, 255)
+
     #             frames.append(frame)
-    #         return frames
+            
+    #         # Attempt to close the environment once after all frames for this trajectory
+    #         if hasattr(env_for_gif_rendering, 'close') and callable(getattr(env_for_gif_rendering, 'close')):
+    #             env_for_gif_rendering.close()
+    #         # Removed the 'else' print as it's no longer a useful debug message
+                
+    #     except Exception as e:
+    #         # Keep a general error message for unhandled exceptions during rendering
+    #         print(f"ERROR: An exception occurred during rendering a trajectory: {e}")
+    #         # Removed traceback.print_exc() for cleaner output in production
+    #     finally:
+    #         # Final safety check for closing, even if redundant
+    #         if env_for_gif_rendering is not None and hasattr(env_for_gif_rendering, 'close') and callable(getattr(env_for_gif_rendering, 'close')):
+    #             env_for_gif_rendering.close()
+
+    #     return frames    
 
     def gif(self, trajectory):
         frames = []
-        
-        # Determine the number of frames to render. Use the full trajectory length now.
-        max_frames_to_render = trajectory.shape[0] 
 
-        # Create the environment instance only once for the entire trajectory
+        max_frames_to_render = trajectory.shape[0]
         env_for_gif_rendering = None
-        try:
-            # Call setupEnvs ONLY ONCE here to get the environment
-            initial_obs_for_env_setup = trajectory[0,:].unsqueeze(0)
-            env_for_gif_rendering = self.setupEnvs(initial_obs_for_env_setup) 
-            
-            if not (hasattr(env_for_gif_rendering, 'render') and callable(getattr(env_for_gif_rendering, 'render'))):
-                # This error indicates a fundamental problem, keep it.
-                print(f"ERROR: Environment does not have a render method. Cannot generate GIFs.")
-                return [] 
 
-            for i in range(max_frames_to_render): 
-                obs_for_current_frame = trajectory[i,:].unsqueeze(0)
-                
-                # Set the environment's state to match the current frame's observation
-                # obs_for_current_frame[0] gets rid of the batch dimension (1, features) -> (features)
-                self.setWorldStates(env_for_gif_rendering, 0, obs_for_current_frame[0]) 
+        # BGR colors for agents
+        colors = [
+            (255, 0, 0),    # Blue
+            (0, 255, 0),    # Green
+            (0, 0, 255),    # Red
+            (255, 255, 0),  # Cyan
+            (255, 0, 255),  # Magenta
+            (0, 255, 255),  # Yellow
+        ]
+
+        num_agents = 3
+        agent_paths = [[] for _ in range(num_agents)]
+
+        # Step 1: Dynamically compute bounding box of trajectory
+        all_positions = trajectory[:, :2*num_agents].reshape(-1, 2).cpu().numpy()
+        x_coords = all_positions[:, 0]
+        y_coords = all_positions[:, 1]
+        
+        traj_x_min, traj_x_max = x_coords.min(), x_coords.max()
+        traj_y_min, traj_y_max = y_coords.min(), y_coords.max()
+
+        # Step 2: Define fixed world space and adjust scale accordingly
+        world_x_min, world_x_max = -1.5, 1.5
+        world_y_min, world_y_max = -1.5, 1.5
+
+        world_width = world_x_max - world_x_min
+        world_height = world_y_max - world_y_min
+
+        try:
+            initial_obs = trajectory[0, :].unsqueeze(0)
+            env_for_gif_rendering = self.setupEnvs(initial_obs)
+
+            if not hasattr(env_for_gif_rendering, 'render'):
+                print("ERROR: Environment does not have a render method.")
+                return []
+
+            for i in range(max_frames_to_render):
+                obs = trajectory[i, :].unsqueeze(0)
+                self.setWorldStates(env_for_gif_rendering, 0, obs[0])
 
                 frame = env_for_gif_rendering.render(mode="rgb_array")
-                
-                # Keep these conversions for robustness, even if not strictly needed now
-                if frame.dtype != np.uint8:
-                    frame = frame.astype(np.uint8)
-                if frame.min() < 0 or frame.max() > 255:
-                    frame = np.clip(frame, 0, 255)
+                if not isinstance(frame, np.ndarray):
+                    continue
 
+                height, width, _ = frame.shape
+                scale_x = width / world_width
+                scale_y = height / world_height
+
+                for agent_id in range(num_agents):
+                    stride = 4  # number of values per agent
+                    idx = stride * agent_id
+                    pos = obs[0][idx:idx+2].cpu().numpy()
+                    agent_paths[agent_id].append(tuple(pos))
+
+                for agent_id, path in enumerate(agent_paths):
+                    color = colors[agent_id % len(colors)]
+                    for j in range(1, len(path)):
+                        x1 = int((path[j - 1][0] - world_x_min) * scale_x)
+                        y1 = int((world_y_max - path[j - 1][1]) * scale_y)
+                        x2 = int((path[j][0] - world_x_min) * scale_x)
+                        y2 = int((world_y_max - path[j][1]) * scale_y)
+
+                        frame = np.ascontiguousarray(frame)
+                        try:
+                            cv2.line(frame, (x1, y1), (x2, y2), color, thickness=2)
+                        except Exception as e:
+                            print(f"Draw error at frame {i}, agent {agent_id}: {e}")
+
+                frame = np.clip(frame, 0, 255).astype(np.uint8)
                 frames.append(frame)
-            
-            # Attempt to close the environment once after all frames for this trajectory
-            if hasattr(env_for_gif_rendering, 'close') and callable(getattr(env_for_gif_rendering, 'close')):
-                env_for_gif_rendering.close()
-            # Removed the 'else' print as it's no longer a useful debug message
-                
-        except Exception as e:
-            # Keep a general error message for unhandled exceptions during rendering
-            print(f"ERROR: An exception occurred during rendering a trajectory: {e}")
-            # Removed traceback.print_exc() for cleaner output in production
-        finally:
-            # Final safety check for closing, even if redundant
-            if env_for_gif_rendering is not None and hasattr(env_for_gif_rendering, 'close') and callable(getattr(env_for_gif_rendering, 'close')):
+
+            if hasattr(env_for_gif_rendering, 'close'):
                 env_for_gif_rendering.close()
 
-        return frames    
+        except Exception as e:
+            print(f"ERROR during rendering: {e}")
+
+        finally:
+            if env_for_gif_rendering is not None and hasattr(env_for_gif_rendering, 'close'):
+                env_for_gif_rendering.close()
+
+        return frames
